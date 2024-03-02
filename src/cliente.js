@@ -1,4 +1,4 @@
-//Clase Cliente
+// Se crea la clase Cliente
 class Cliente{
     constructor(nombre, impuesto){
         this._nombre = nombre;
@@ -10,66 +10,21 @@ class Cliente{
     set nombre(nombre){
         this._nombre = nombre;
     }
+    // se crea metodo para calcular el impuesto
    calcularImpuestos() {
+    // validación
     if (this._impuesto._deducciones > this._impuesto._montoBrutoAnual) {
-        console.log("Queda exonerado de Impuestos Anuales");
+        // Si deducción es mayor a montoBrutoAnual Retornamos exonerado de impuesto
+        return("Queda exonerado de Impuestos Anuales");
     }
     else {
+        // De lo contrario hacemos el calculo de la resta de montoBrutoAnual menos deducciones, por 0.21
         const resultado = (this._impuesto.montoBrutoAnual - this._impuesto.deducciones) * 0.21;
+        // Retornamos el resultado del calculo.
         return (`El impuesto total a pagar por ${this.nombre} es: ${resultado}`);
     }
    }
    
 };
-
+// Exportamos la clase Cliente
 export default Cliente;  
-
-
-// export default class Impuesto {
-//     constructor(monto_bruto_anual, deducciones){
-//         if (typeof monto_bruto_anual !== 'number' || monto_bruto_anual < 0) {
-//             throw new Error('monto_bruto_anual debe ser un número positivo');
-//         }
-//         if (typeof deducciones !== 'number' || deducciones < 0) {
-//             throw new Error('deducciones debe ser un número positivo');
-//         }
-//         this._monto_bruto_anual = () => {
-//             return monto_bruto_anual;
-//         }
-//         this._deducciones = () => {
-//             return deducciones;
-//         }
-//     }
-
-//     get monto_bruto_anual(){
-//         return this._monto_bruto_anual;
-//     }
-    
-//     get deducciones(){
-//         return this._deducciones;
-//     }
-
-//     set monto_bruto_anual(monto_bruto_anual_nuevo){
-//         if (typeof monto_bruto_anual_nuevo !== 'number' || monto_bruto_anual_nuevo < 0) {
-//             throw new Error('monto_bruto_anual debe ser un número positivo');
-//         }
-//         this._monto_bruto_anual= ()=> {
-//             return monto_bruto_anual_nuevo;
-//         }
-//     }
-
-//     set deducciones(deducciones_nuevo){
-//         if (typeof deducciones_nuevo !== 'number' || deducciones_nuevo < 0) {
-//             throw new Error('deducciones debe ser un número positivo');
-//         }
-//         this._deducciones= ()=> {
-//             return deducciones_nuevo;
-//         }
-//     }
-// }
-
-
-
-
-
-

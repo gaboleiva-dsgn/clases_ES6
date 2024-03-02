@@ -1,4 +1,4 @@
-//Clase impuesto
+// Se crea la clase Cliente
 class Impuesto{
     constructor(montoBrutoAnual, deducciones){
         this._montoBrutoAnual = montoBrutoAnual;
@@ -17,5 +17,5 @@ class Impuesto{
         this._deducciones = deducciones;
     }
 };
-
+// Exportamos la clase Impuesto
 export default Impuesto;  
